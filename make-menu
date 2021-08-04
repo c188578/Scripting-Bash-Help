@@ -1,0 +1,31 @@
+main_menu()
+{
+clear
+echo "*=======================================================================*";
+echo "*============================= Main Menu ===============================*";
+echo "*=======================================================================*";
+echo " 1. Perform precheks and Display current Repo before OS patching"
+echo " 2. Connect to the correct repository"
+echo " 3. Start OS patching"
+echo " 0. Exit from script"
+echo "*=======================================================================*";
+echo -n "Please choose a word [1,2,3,4 or 0 to exit]? "     
+read choice
+if [ $choice -eq 0 ]; then
+ echo "existing from script..."
+ exit 0
+fi
+if [ $choice -eq 1 ]; then
+ Perform_precheks_before_OS_patching
+fi
+if [ $choice -eq 2 ]; then
+  Connect_to_the_correct_repository 
+fi
+if [ $choice -eq 3 ]; then
+ Start_OS_patching
+else
+ main_menu
+fi  
+}
+
+main_menu
